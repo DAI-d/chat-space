@@ -12,8 +12,6 @@
 - belongs_to :group
 - belongs_to :user
 
-
-
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -27,8 +25,6 @@
 - has_many :groups throuth: :users_groups
 - has_many :messages
 
-
-
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -39,8 +35,6 @@
 ### Association
 - has_many :users throuth: :users_groups
 - has_many :messages
-
-
 
 ## messagesテーブル
 |Column|Type|Options|
