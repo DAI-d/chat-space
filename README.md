@@ -15,9 +15,9 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
-|group_id|integer|null: false|
-|name|references|null: false, foreign_key: true, unique: true|
+|user_id|references|null: false, foreign_key: true,|
+|group_id|references|null: false, foreign_key: true,|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :groups throuth: :users_groups
@@ -27,7 +27,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|references|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
 - has_many :users throuth: :users_groups
