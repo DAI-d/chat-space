@@ -1,17 +1,19 @@
 !!!
 %html
   %head
-    .header グループを作成しました     
   %body
+    .flash-box グループを作成しました
     .chat-side
       .side-header
         .side-header__box
           .side-header__box__user-name test-user
           .side-header__box__menu
             .side-header__box__menu__new-group
-              .fa.fa-edit
+              %a{href: "/groups/new"}
+                .fa.fa-edit
             .side-header__box__menu__edit-user
-              .fa.fa-cog
+              %a{href: "/users/601/edit"}
+                .fa.fa-cog
       .groups
         .group
           .group__group-name test-grpups
@@ -26,7 +28,7 @@
       .main-header
         .main-header__left-box
           .main-header__left-box__current-group test-groups
-          .main-header__left-box__menber
+          .main-header__left-box__menber-box
             .main-header__left-box__member-list Member：
             .main-header__left-box__member-list__member ken
         .main-header__edit-btn Edit
@@ -35,17 +37,27 @@
           .message__upper-info
             .message__upper-info__talker test-user
             .message__upper-info__date 2019/09/12(Thu) 21:34:55
-            .message__text こんにちは！
+          .message__text こんにちは！
+        .message
           .message__upper-info
             .message__upper-info__talker test-user
             .message__upper-info__date 2019/09/12(Thu) 21:34:55
-            .message__text さようなら！
+          .message__text さようなら！
+        .message
+          .message__upper-info
+            .message__upper-info__talker test-user
+            .message__upper-info__date 2019/09/12(Thu) 21:34:55
+          .message__text さようなら！
+        .message
+          .message__upper-info
+            .message__upper-info__talker test-user
+            .message__upper-info__date 2019/09/12(Thu) 21:34:55
+          .message__text さようなら！
       .form
-        %form.new_message.new_message
+        %form.new_message
           .input-box
-            %input.message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+            %input.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
             %label.input-box__image{:for => "message_image"}
-              -# .fa.fa-image
-              .fa.fa-youtube
-              %input#message_image.input-box__image__file{:type => "file"}/
-          %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+              .fa.fa-image
+              %input#message_image{:type => "file"}/
+          %input.submit-btn{:type => "submit", :value => "Send"}
