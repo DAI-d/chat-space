@@ -3,51 +3,49 @@
   %head
     .header グループを作成しました     
   %body
-    .flash-box
-    .wrapper
-      .chat-side
-        .side-header
-          .side-header__box
-            .side-header__box__user-name test-user
-            .side-header__box__menu
-              .side-header__box__menu__new-group
-                .fa.fa-edit
-              .side-header__box__menu__edit-user
-                .fa.fa-cog
-        .groups
-          .group
-            .group__group-name test-grpups
-            .group__latest-message さようなら
-          .group
-            .group__group-name sample-group
-            .group__latest-message hello!
-          .group
-            .group__group-name example
-            .group__latest-message まだメッセージがありません
-      .chat-main
-        .main-header
-          .main-header__left-box
-            .main-header__left-box__current-group test-groups
+    .chat-side
+      .side-header
+        .side-header__box
+          .side-header__box__user-name test-user
+          .side-header__box__menu
+            .side-header__box__menu__new-group
+              .fa.fa-edit
+            .side-header__box__menu__edit-user
+              .fa.fa-cog
+      .groups
+        .group
+          .group__group-name test-grpups
+          .group__latest-message さようなら
+        .group
+          .group__group-name sample-group
+          .group__latest-message hello!
+        .group
+          .group__group-name example
+          .group__latest-message まだメッセージがありません
+    .chat-main
+      .main-header
+        .main-header__left-box
+          .main-header__left-box__current-group test-groups
+          .main-header__left-box__menber
             .main-header__left-box__member-list Member：
             .main-header__left-box__member-list__member ken
-            .main-header__edit-btn Edit
-        .messages
-          .message{"data-message_id" => "2542"}
-            .message__upper-info
-              %p.message__upper-info__talker test-user
-              %p.message__upper-info__date 2019/09/12(Thu) 21:34:55
-              %p.message__text こんにちは！
-            .message__upper-info
-              %p.message__upper-info__talker test-user
-              %p.message__upper-info__date 2019/09/12(Thu) 21:34:55
-              %p.message__text さようなら！
-        .form
-          %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/1237/messages", :enctype => "multipart/form-data", :method => "post"}
-            %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-            %input{:name => "authenticity_token", :type => "hidden", :value => "cy97TElllbBKxfSzs1rPyKcpxeY/Ys3TNtkNW+AyKhoc8Q8/OZZkbkyC2rmVqqeuLJ4ryuyNjBPnwQuJ8WBaBw=="}/
-            .input-box
-              %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-              %label.input-box__image{:for => "message_image"}
-                %i.fa.fa-image
-                %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
-            %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+        .main-header__edit-btn Edit
+      .messages
+        .message
+          .message__upper-info
+            .message__upper-info__talker test-user
+            .message__upper-info__date 2019/09/12(Thu) 21:34:55
+            .message__text こんにちは！
+          .message__upper-info
+            .message__upper-info__talker test-user
+            .message__upper-info__date 2019/09/12(Thu) 21:34:55
+            .message__text さようなら！
+      .form
+        %form.new_message.new_message
+          .input-box
+            %input.message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+            %label.input-box__image{:for => "message_image"}
+              -# .fa.fa-image
+              .fa.fa-youtube
+              %input#message_image.input-box__image__file{:type => "file"}/
+          %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
