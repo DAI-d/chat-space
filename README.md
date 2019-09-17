@@ -2,7 +2,7 @@
 
 # DB設計
 
-## groups_usersテーブル
+## group_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
@@ -20,9 +20,9 @@
 |name|string|null: false, unique: true|
 
 ### Association
-- has_many :groups throuth: :users_groups
+- has_many :groups throuth: :group_users
 - has_many :messages
-- has_many :users_groups
+- has_many :group_users
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -30,9 +30,9 @@
 |name|string|null: false|
 
 ### Association
-- has_many :users throuth: :users_groups
+- has_many :users throuth: :group_users
 - has_many :messages
-- has_many :users_groups
+- has_many :group_users
 
 ## messagesテーブル
 |Column|Type|Options|

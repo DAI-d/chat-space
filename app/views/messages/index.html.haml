@@ -1,8 +1,8 @@
-.flash-box グループを作成しました
 .chat-side
   .side-header
     .side-header__box
-      .side-header__box__user-name test-user
+      .side-header__box__user-name 
+        = current_user.name
       .side-header__box__menu
         .side-header__box__menu__new-group
           = link_to '/groups/new' do
