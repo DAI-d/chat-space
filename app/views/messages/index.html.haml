@@ -1,59 +1,39 @@
-.chat-side
-  .side-header
-    .side-header__box
-      .side-header__box__user-name 
-        = current_user.name
-      .side-header__box__menu
-        .side-header__box__menu__new-group
-          = link_to new_group_path do
-            %i.fa.fa-edit 
-        .side-header__box__menu__edit-user
-          = link_to edit_user_path(current_user) do
-            %i.fa.fa-cog
-  .groups
-    .group
-      .group__group-name test-grpups
-      .group__latest-message さようなら
-    .group
-      .group__group-name sample-group
-      .group__latest-message hello!
-    .group
-      .group__group-name example
-      .group__latest-message まだメッセージがありません
-.chat-main
-  .main-header
-    .main-header__left-box
-      .main-header__left-box__current-group test-groups
-      .main-header__left-box__menber-box
-        .main-header__left-box__member-list Member：
-        .main-header__left-box__member-list__member ken
-    .main-header__edit-btn Edit
-  .messages
-    .message
-      .message__upper-info
-        .message__upper-info__talker test-user
-        .message__upper-info__date 2019/09/12(Thu) 21:34:55
-      .message__text こんにちは！
-    .message
-      .message__upper-info
-        .message__upper-info__talker test-user
-        .message__upper-info__date 2019/09/12(Thu) 21:34:55
-      .message__text さようなら！
-    .message
-      .message__upper-info
-        .message__upper-info__talker test-user
-        .message__upper-info__date 2019/09/12(Thu) 21:34:55
-      .message__text さようなら！
-    .message
-      .message__upper-info
-        .message__upper-info__talker test-user
-        .message__upper-info__date 2019/09/12(Thu) 21:34:55
-      .message__text さようなら！
-  .form
-    %form.new_message
-      .input-box
-        %input.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}
-        %label.input-box__image{for: "message_image"}
-          .fa.fa-image
-          %input#message_image{type: "file"}
-      %input.submit-btn{type: "submit", value: "Send"}
+.wrapper
+  = render 'shared/side_bar'
+  .chat-main
+    .main-header
+      .main-header__left-box
+        .main-header__left-box__current-group test-groups
+        .main-header__left-box__menber-box
+          .main-header__left-box__member-list Member：
+          .main-header__left-box__member-list__member ken
+      .main-header__edit-btn Edit
+    .messages
+      .message
+        .message__upper-info
+          .message__upper-info__talker test-user
+          .message__upper-info__date 2019/09/12(Thu) 21:34:55
+        .message__text こんにちは！
+      .message
+        .message__upper-info
+          .message__upper-info__talker test-user
+          .message__upper-info__date 2019/09/12(Thu) 21:34:55
+        .message__text さようなら！
+      .message
+        .message__upper-info
+          .message__upper-info__talker test-user
+          .message__upper-info__date 2019/09/12(Thu) 21:34:55
+        .message__text さようなら！
+      .message
+        .message__upper-info
+          .message__upper-info__talker test-user
+          .message__upper-info__date 2019/09/12(Thu) 21:34:55
+        .message__text さようなら！
+    .form
+      %form.new_message
+        .input-box
+          %input.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}
+          %label.input-box__image{for: "message_image"}
+            .fa.fa-image
+            %input#message_image{type: "file"}
+        %input.submit-btn{type: "submit", value: "Send"}
