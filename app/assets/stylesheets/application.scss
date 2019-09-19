@@ -1,8 +1,13 @@
 @import "./reset";
 @import "font-awesome";
-@import "chat-side";
+@import "config/colors";
+@import "config/font-size";
+@import "mixins/vendor_prefix";
 @import "chat-main";
 @import "form";
 @import "modules/user";
-@import "config/colors";
 @import "modules/flash";
+@import "modules/group";
+@import "modules/side-var";
+@import "modules/chat";
+//リストの並び順が関係ある？
