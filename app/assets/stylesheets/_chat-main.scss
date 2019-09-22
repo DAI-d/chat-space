@@ -40,8 +40,13 @@
     right: 40px;
     color:#38AEF0;
     cursor: pointer;
+    a{text-decoration: none;}
+      a:link{color:#38AEF0;}
+      a:visited{color:#38AEF0;}
   }
 }
+
+
 
 .messages{
   height: calc(100vh - 190px);

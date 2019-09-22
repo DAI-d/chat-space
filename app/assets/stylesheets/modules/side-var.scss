@@ -6,15 +6,17 @@
   .header {
     background-color: $side_blue_dark;
     height: 100px;
-    line-height: 100px;
     padding: 0 20px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
     &__name {
-      display: inline-block;
+      // display: inline-block;
       font-size: $side_header_font;
       font-weight: bold;
     }
     &__lists {
-      display: inline-block;
+      // display: inline-block;
       float: right;
       .list {
         display: inline-block;
@@ -29,8 +31,9 @@
   .groups {
     background-color: $side_blue_light;
     height: calc(100vh - 100px);
+    width:260px;
     padding: 0 20px;
-    // overflow-y: auto; //ビューのgroups下に謎の余白ができるので追記、したら次は右側に余白が出現・・・
+    overflow: scroll; //ビューのgroups下に謎の余白ができるので追記、したら次は右側に余白が出現・・・
     .group {
       box-sizing: border-box;
       padding: 20px 0 40px;
