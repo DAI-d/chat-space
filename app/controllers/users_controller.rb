@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def index #以下追記
+    @user = User.find(params[:user_id])
+  end
+
   private
 
   def user_params
