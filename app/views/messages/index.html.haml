@@ -3,14 +3,14 @@
   .chat-main
     .main-header
       .main-header__left-box
-        - current_user.groups.each do |group| #追記
+        - current_user.groups.each do |group|
           .main-header__left-box__current-group
-            = @group.name #元test-groups
+            = @group.name
           .main-header__left-box__menber-box
             .main-header__left-box__member-list Member：
             - @group.users.each do |user|
               .main-header__left-box__member-list__member
-                = user.name #元ken
+                = user.name
       .main-header__right-box
         .main-header__right-box__edit-btn
           = link_to 'Edit', edit_group_path(@group)
