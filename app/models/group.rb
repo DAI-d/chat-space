@@ -2,7 +2,7 @@ class Group < ApplicationRecord
   has_many :group_users
   has_many :users, through: :group_users
   has_many :messages
-  validates :name, presence: true #uniquenessを削除。メッセージ問題6解答では無くなってる
+  validates :name, presence: true ,uniqueness: true #uniquenessを削除。メッセージ問題6解答では無くなってる
 
   def show_last_message
     if (last_message = messages.last).present?
@@ -12,4 +12,3 @@ class Group < ApplicationRecord
     end
   end
 end
-
