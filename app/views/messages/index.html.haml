@@ -8,8 +8,9 @@
             = @group.name #元test-groups
           .main-header__left-box__menber-box
             .main-header__left-box__member-list Member：
-            .main-header__left-box__member-list__member
-              = current_user.name #元ken
+            - @group.users.each do |user|
+              .main-header__left-box__member-list__member
+                = user.name #元ken
       .main-header__right-box
         .main-header__right-box__edit-btn
           = link_to 'Edit', edit_group_path(@group)

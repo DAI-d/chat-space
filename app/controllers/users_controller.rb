@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
 
+  def index #以下追記
+    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id:current_user)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   def edit
   end
 
@@ -10,23 +18,6 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
-  def index #以下追記
-    @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").limit(20)
-    respond_to do |format|
-      format.html
-      format.json
-    end
-  end
-
-  # mooovi版
-  # def search
-  #   @products = Product.where('title LIKE(?)', "%#{params[:keyword]}%").limit(20)
-  #   respond_to do |format|
-  #     format.html
-  #     format.json
-  #   end
-  # end
 
   private
 

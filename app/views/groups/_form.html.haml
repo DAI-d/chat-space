@@ -7,31 +7,30 @@
           %li= message
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      %label.chat-group-form__label{:for => "group_name"}
-        グループ名
+      = f.label :name,'グループ名', class: 'chat-group-form__label'
     .chat-group-form__field--right
-      %input#group_name.chat__group_name.chat-group-form__input{:name => "group[name]", :placeholder => "グループ名を入力してください", :type => "text"}/
+      = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
   .chat-group-form__field.clearfix
+
     .chat-group-form__field--left
-      %label.chat-group-form__label{:for => "user-search-field"}
-        チャットメンバーを追加
+      = f.label :name, 'チャットメンバーを追加', class: 'chat-group-form__label'
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-        %input#user-search-field.chat-group-form__input-member{:name => "search", :placeholder => "追加したいユーザー名を入力してください", :type => "text", :value => ""}/
+        %input#user-search-field.chat-group-form__input{placeholder: "追加したいユーザー名を入力してください", type: "text"}/
       #user-search-result
+
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      %label.chat-group-form__label{:for => "members"} チャットメンバー
+      = f.label :name, 'チャットメンバー', class: 'chat-group-form__label'
     .chat-group-form__field--right
       .chat-group-users.js-add-user
-        #601.chat-group-user.clearfix.js-chat-member
-          %input#group_user_ids{:name => "group[user_ids][]", :type => "hidden", :value => "601"}/
-          %p.chat-group-user__name test
+      - @group.users.each do |user|
+        .chat-group-user
+          %input{name: 'group[user_ids][]', type: 'hidden', value: "#{ user.id }"}
+          %p.chat-group-user__name
+            = user.name
+          %p.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除  
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
-      %input.chat-group-form__action-btn{"data-disable-with" => "登録する", :name => "commit", :type => "submit", :value => "登録する"}/
-
-
-/カリキュラムのhtmlをhamlに変換して14-19に追加
-/collection_check_boxesのところ削除
+      = f.submit class: 'chat-group-form__action-btn', type: 'submit'
