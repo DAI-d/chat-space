@@ -45,8 +45,8 @@ member_list.append(html);
 
     .done(function(user) {
       $("#user-search-result").empty();
-      if (user.length !== 0) { //users→user
-        user.forEach(function(user){ //users→user
+      if (user.length !== 0) {
+        user.forEach(function(user){
           appendUserToSearchList(user);
         });
       }
@@ -59,8 +59,8 @@ member_list.append(html);
     })
   });
 
-  $(function(){  //1.clickアクション定義。documentでリストにclickイベント発火できる。
-    $(document).on('click', '.user-search-add', function() { //クラスuser-search-add（appendUserToSearchListの中）をクリックしたときにイベント発火
+  $(function(){
+    $(document).on('click', '.user-search-add', function() {
       var name = $(this).attr("data-user-name");
       var user_id = $(this).attr("data-user-id");
       $(this).parent().remove();
@@ -68,8 +68,8 @@ member_list.append(html);
     });
   });
 
-  $(function(){  //1.clickアクション定義。documentでリストにclickイベント発火できる。
-    $(document).on('click', '.user-search-remove', function() { //クラスuser-search-add（appendUserToSearchListの中）をクリックしたときにイベント発火
+  $(function(){
+    $(document).on('click', '.user-search-remove', function() {
       $(this).parent().remove();
     });
   });
