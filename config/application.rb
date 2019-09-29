@@ -6,6 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+config.active_record.default_timezone = :local
 config.time_zone = 'Tokyo'
 
 module ChatSpace
